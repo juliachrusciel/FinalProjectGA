@@ -1,0 +1,2 @@
+module KadikoysHelper
+end

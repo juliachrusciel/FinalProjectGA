@@ -1,0 +1,2 @@
+class KadikoysController < ApplicationController
+end

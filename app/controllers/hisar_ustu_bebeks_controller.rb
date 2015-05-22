@@ -1,0 +1,2 @@
+class HisarUstuBebeksController < ApplicationController
+end

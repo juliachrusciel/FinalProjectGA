@@ -1,0 +1,2 @@
+class TaksimsController < ApplicationController
+end
