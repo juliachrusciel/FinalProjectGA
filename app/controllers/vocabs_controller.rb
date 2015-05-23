@@ -1,2 +1,3 @@
 class VocabsController < ApplicationController
+  
 end
