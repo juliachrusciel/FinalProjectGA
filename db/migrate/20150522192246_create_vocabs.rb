@@ -4,8 +4,8 @@ class CreateVocabs < ActiveRecord::Migration
       t.string :TurkishWP
       t.string :EnglishWP
       t.string :part_of_speech
-      t.boolean :formal
-      t.boolean :slang
+      t.boolean :formal, default: false
+      t.boolean :slang, default: false
 
       t.timestamps null: false
     end

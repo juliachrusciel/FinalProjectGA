@@ -30,7 +30,7 @@ class KadikoysController < ApplicationController
 
     private
     def kadikoy_params
-      params.require(:kadikoy).permit(:latitude, :longitude,:place_name, :address, :phone_number, :email, :place_type, :description :keyword, :question, :review, :origin_date)
+      params.require(:kadikoy).permit(:latitude, :longitude, :place_name, :address, :phone_number, :email, :place_type, :description :keyword, :question, :review, :origin_date)
     end
 
 end
