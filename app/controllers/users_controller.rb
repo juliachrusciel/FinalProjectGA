@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
-  def
-
+  def index
+    @user = User.new
+    @user = current_user
   end
 
-  def
-
+  def home
   end
 
 end

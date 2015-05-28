@@ -4,11 +4,19 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  root 'welcome#index'
+  #root 'layouts#index'
+
+  #homepage routes
+  get "/" => "users#home"
+  get "/HisarUstuBebeks" => "hisar_ustu_bebeks#index"
 
   #Admin routes
-
+  get "/admin" => "admin#home"
+  #post " " => ""
   #Users routes
+  #get "users/:id" =>
+
+
 
   #Hisar_ustu_bebeks routes
 
