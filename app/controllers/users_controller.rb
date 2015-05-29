@@ -5,9 +5,4 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  # def home
-  #   current_user
-  #   redirect_to "/"
-  # end
-
 end
