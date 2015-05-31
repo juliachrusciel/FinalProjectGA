@@ -94,7 +94,13 @@ map.addLayer({
 
 });
 
-
+//Enables a pop up but needs to be specified as to location
+map.on('click', function(e) {
+var tooltip = new mapboxgl.Popup()
+.setLatLng(map.unproject(e.point))
+.setHTML('<h1>Hello World!</h1>')
+.addTo(map);
+});
 
 //
 // var marker = L.marker([-73, 40], {
