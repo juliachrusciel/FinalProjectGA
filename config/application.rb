@@ -13,16 +13,15 @@ require "sprockets/railtie"
 
 
 
-# config/application.rb
+
 Bundler.require(*Rails.groups)
 
+## Part that enables public key hiding
 Dotenv::Railtie.load
 
 HOSTNAME = ENV['HOSTNAME']
+## End of that part
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
-Bundler.require(*Rails.groups)
 
 module IstApp
   class Application < Rails::Application

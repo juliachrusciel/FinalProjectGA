@@ -1,37 +1,119 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8 />
-<title>A simple map</title>
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
-
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.7.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.7.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
 </head>
 <body>
-<div id='ist-map'></div>
+
+<div id='map'></div>
+<script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
 <script>
-L.mapbox.accessToken = 'pk.eyJ1IjoianVjaHJ1IiwiYSI6IjZhYzFkMThlODBjNDY1N2NkNGZiZTVlMjI4MTU2OTY1In0.N1IDr2cpaPyTtanV-K2wdw';
-// var map = L.mapbox.map('map', 'juchru.63054a99')
+mapboxgl.accessToken = 'pk.eyJ1IjoianVjaHJ1IiwiYSI6IjZhYzFkMThlODBjNDY1N2NkNGZiZTVlMjI4MTU2OTY1In0.N1IDr2cpaPyTtanV-K2wdw';
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'https://www.mapbox.com/mapbox-gl-styles/styles/outdoors-v7.json',
+  center: [41.036635, 29.016952],
+  zoom: 11.35
+});
 
-var geocoder = L.mapbox.geocoder('mapbox.places'),
-    map = L.mapbox.map('map', 'juchru.63054a99');
 
-geocoder.query('Istanbul, Turkey', showMap);
 
-function showMap(err, data) {
-    // The geocoder can return an area, like a city, or a
-    // point, like an address. Here we handle both cases,
-    // by fitting the map bounds to an area or zooming to a point.
-    if (data.lbounds) {
-        map.fitBounds(data.lbounds);
-    } else if (data.latlng) {
-        map.setView([data.latlng[0], data.latlng[1]], 13);
+map.on('style.load', function() {
+  map.addSource("markers", {
+    "type": "geojson",
+      "data": {
+        "type": "FeatureCollection",
+          "features": [{
+
+            //Begins Central Beyoglu Point
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [28.977499, 41.0369]
+          },
+
+          "properties": {
+            "title": "Central Beyoglu",
+            "description": "hello Bae",
+            "marker-symbol": "monument"
+          }
+
+        }, { //End of Central Beyoglu and Begins Central Kadikoy Point
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [29.036699, 40.9869]
+        },
+
+        "properties": {
+          "title": "Central Kadikoy",
+          "description": "hello Kadikoy",
+          "marker-symbol": "monument"
+        }
+      }, { //End of Central Kadikoy and Begins Central Hisar Ustu-Bebek Point
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [29.052571999999998, 41.081081]
+      },
+
+      "properties": {
+        "title": "Central Hisarustu-Bebek",
+        "description": "hello HUB",
+        "marker-symbol": "monument"
+      }
+    }]
+  }
+
+});
+
+
+map.addLayer({
+    "id": "markers",
+    "type": "symbol",
+    "source": "markers",
+    "layout": {
+      "icon-image": "{marker-symbol}-12",
+      "text-field": "{title}",
+      "text-font": "Open Sans Semibold, Arial Unicode MS Bold",
+      "text-offset": [0, 0.6],
+      "text-anchor": "top"
+    },
+    "paint": {
+      "text-size": 12
     }
-}
+  });
 
+});
+
+
+
+//
+// var marker = L.marker([-73, 40], {
+//     icon: L.mapbox.marker.icon({
+//       'marker-color': '#f86767'
+//     })
+// });
+//
+// map.bindPopup('<button class="trigger"></button>')
+// map.addTo(central Beyoglu);
+// // The HTML we put in bindPopup doesn't exist yet, so we can't just say
+// // $('#mybutton'). Instead, we listen for click events on the map element which
+// // will bubble up from the tooltip, once it's created and someone clicks on it.
+// $('#map').on('click', '.trigger', function() {
+//     alert('Hello from Toronto!');
+// });
 
 
 </script>
+
 </body>
 </html>

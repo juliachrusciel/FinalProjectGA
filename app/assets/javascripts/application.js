@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(env)
+      var map = new mapboxgl.Map('map', 'juchru.63054a99') ({
+        container: 'map',
+        center: [29.016952, 41.036635],
+        zoom: 13,
+        style: style_object,
+        hash: true
+      });
