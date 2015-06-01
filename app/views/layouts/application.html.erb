@@ -30,8 +30,6 @@ var map = new mapboxgl.Map({
   minZoom: 11.35
 });
 
-
-
 map.on('style.load', function() {
   map.addSource("markers", {
     "type": "geojson",
@@ -76,6 +74,45 @@ map.on('style.load', function() {
         "description": "hello HUB",
         "marker-symbol": "monument"
       }
+    }, {  // Begins Kadikoy Tour Points
+                 "type": "Feature",
+                 "geometry": {
+                   "type": "Point",
+                   "coordinates": [29.022928, 40.992807]
+                 },
+
+                 "properties": {
+                   "title": "Kadikoy Ferry Station (with service to Besiktas Ferry Station and Eminonu Ferry Station)",
+                   "description": "Kadikoy, possibly the most exciting neighborhood on the Asian sigde, is known for its modern and alternative cultural scene. Off the common tourist path on the European side, most visitors to Istanbul do not experience this gem. I would recommend taking the ferry from Eminonu to Kadikoy to get a taste of a more authentic Turkish experience as lived by a local, both literally and figuratively. ",
+                   "marker-symbol": "star"
+               }
+
+             }, { //End of Ferry point and beginning of Lokum
+               "type": "Feature",
+               "geometry": {
+                 "type": "Point",
+                 "coordinates": [29.023832, 40.990199]
+             },
+
+             "properties": {
+               "title": "Ali Muhiddin Haci Bekir Lokum (Turkish Delight) Shop",
+               "description": "Osmanağa Mah. Muvakkithane Sok. 6/A, Osmanağa/İstanbul - Asya, Turkey A family owned business with a Turkish Delight making tradition dating back 200 years to the late Ottoman Empire, this shop produced candies and sweets in traditional Turkish flavors such as rose, lemon and mint. For the uninitiated whose only knowledge of Turkish Delight is as the sweet which tempted Edmund to betray his whole family in The Lion, The Witch and the Wardrobe, lokum is small cubes of jelly candy - like your favorite gummy bears but in more sophisticated flavors.",
+               "marker-symbol": "star"
+             }
+
+           }, { //End of Lokum and beginning of Ciya
+             "type": "Feature",
+             "geometry": {
+               "type": "Point",
+               "coordinates": [29.024057, 40.989082]
+           },
+
+           "properties": {
+             "title": "Ciya Kebab Lokantasi (Restaurant)",
+             "description": "An excellent restaurant with a modern take on Southeastern Turkish cuisine, the original venue got a boost in business after a favorable New York Times review a few years back. There are three restaurants on this street by the same name, but make sure to go to the larger one which offers both meze, the Turkish equivalent of small plates or tapas, and kebabs which feature pistachios, tomatoes and mushrooms. Finish off your meal with a kabak tatlisi , or candied pumpkin dessert, and a glass of Turkish tea. Notably, Ciya is also one of the first restaurants in Turkey to employ female servers.",
+             "marker-symbol": "star"
+           }
+
     }]
   }
 
@@ -97,8 +134,199 @@ map.addLayer({
       "text-size": 12
     }
   });
-
 });
+
+//////////Line For Kadikoy Tour
+/////////////////////////////
+map.on('style.load', function() {
+  map.addSource("route", {
+    "type": "geojson",
+
+    //line for Tour
+    "data": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [29.022939, 40.992815],
+          [29.023507, 40.992548],
+          [29.024033, 40.991811],
+          [29.024183, 40.991511],
+          [29.023958, 40.991034],
+          [29.024741, 40.990669],
+          [29.024333, 40.990135],
+          [29.023894, 40.990191],
+          [29.024248, 40.990005],
+          [29.023958, 40.989657],
+          [29.024505, 40.989479],
+          [29.024076, 40.98913]
+        ]
+      }
+    }
+  });
+
+  map.addLayer({
+    "id": "route",
+    "type": "line",
+    "source": "route",
+    "layout": {
+      "line-join": "round",
+      "line-cap": "round"
+    },
+    "paint": {
+      "line-color": "#0000ff",
+      "line-width": 2
+    }
+  });
+});
+
+
+//////////Line For Kadikoy Market Area
+/////////////////////////////
+map.on('style.load', function() {
+  map.addSource("route", {
+    "type": "geojson",
+
+    //line for kadikoy market area
+    "data": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [29.022134, 40.989179],
+          [29.023314, 40.990418],
+          [29.023164, 40.990532],
+          [29.0237, 40.99109],
+          [29.023936, 40.991017],
+          [29.024151, 40.991293],
+          [29.026361, 40.990888],
+          [29.026286, 40.989859],
+          [29.025996, 40.98943],
+          [29.025063, 40.989519],
+          [29.024655, 40.988823],
+          [29.025149, 40.987802],
+          [29.024548,40.987786],
+          [29.024055, 40.987883],
+          [29.022115, 40.989185],
+          [29.022129, 40.989179],
+          [29.022139, 40.989185]
+        ]
+      }
+    }
+  });
+
+  map.addLayer({
+    "id": "route",
+    "type": "line",
+    "source": "route",
+    "layout": {
+      "line-join": "round",
+      "line-cap": "round"
+    },
+    "paint": {
+      "line-color": "#ff0000",
+      "line-width": 2
+    }
+  });
+});
+
+
+
+
+// //Code for making a marker cluster
+// var markers = new L.MarkerClusterGroup();
+//
+//    for (var i = 0; i < addressPoints.length; i++) {
+//        var a = addressPoints[i];
+//        var title = a[2];
+//        var marker = L.marker(new L.LatLng(a[0], a[1]), {
+//            icon: L.mapbox.marker.icon({'marker-symbol': 'post', 'marker-color': '0044FF'}),
+//            title: title
+//        });
+//        marker.bindPopup(title);
+//        markers.addLayer(marker);
+//    }
+//
+//    map.addLayer(markers);
+//
+//
+// //template for making marker clusters for neighborhood tours
+//
+// map.on('style.load', function() {
+//   map.addSource("markers", {
+//     "type": "geojson",
+//       "data": {
+//         "type": "FeatureCollection",
+//           "features": [{
+//
+//             //Begins Kadikoy Tour Points
+//             "type": "Feature",
+//             "geometry": {
+//               "type": "Point",
+//               "coordinates": [29.022928, 40.992807]
+//             },
+//
+//             "properties": {
+//               "title": "Kadikoy Ferry Station (with service to Besiktas Ferry Station and Eminonu Ferry Station)",
+//               "description": "Kadikoy, possibly the most exciting neighborhood on the Asian sigde, is known for its modern and alternative cultural scene. Off the common tourist path on the European side, most visitors to Istanbul do not experience this gem. I would recommend taking the ferry from Eminonu to Kadikoy to get a taste of a more authentic Turkish experience as lived by a local, both literally and figuratively. ",
+//               "marker-size": "medium",
+//               "marker-color": "#1087bf",
+//               "marker-symbol": "marker-stroked"
+//           }
+//
+//         }, { //End of Ferry point and beginning of Lokum
+//           "type": "Feature",
+//           "geometry": {
+//             "type": "Point",
+//             "coordinates": [29.023832, 40.990199]
+//         },
+//
+//         "properties": {
+//           "title": "Ali Muhiddin Haci Bekir Lokum (Turkish Delight) Shop",
+//           "description": "Osmanağa Mah. Muvakkithane Sok. 6/A, Osmanağa/İstanbul - Asya, Turkey A family owned business with a Turkish Delight making tradition dating back 200 years to the late Ottoman Empire, this shop produced candies and sweets in traditional Turkish flavors such as rose, lemon and mint. For the uninitiated whose only knowledge of Turkish Delight is as the sweet which tempted Edmund to betray his whole family in The Lion, The Witch and the Wardrobe, lokum is small cubes of jelly candy - like your favorite gummy bears but in more sophisticated flavors.",
+//           "marker-size": "medium",
+//           "marker-color": "#1087bf",
+//           "marker-symbol": "marker-stroked"
+//         }
+//
+//       }, { //End of Lokum and beginning of Ciya
+//         "type": "Feature",
+//         "geometry": {
+//           "type": "Point",
+//           "coordinates": [29.024057, 40.989082]
+//       },
+//
+//       "properties": {
+//         "title": "Ciya Kebab Lokantasi (Restaurant)",
+//         "description": "An excellent restaurant with a modern take on Southeastern Turkish cuisine, the original venue got a boost in business after a favorable New York Times review a few years back. There are three restaurants on this street by the same name, but make sure to go to the larger one which offers both meze, the Turkish equivalent of small plates or tapas, and kebabs which feature pistachios, tomatoes and mushrooms. Finish off your meal with a kabak tatlisi , or candied pumpkin dessert, and a glass of Turkish tea. Notably, Ciya is also one of the first restaurants in Turkey to employ female servers.",
+//         "marker-size": "medium",
+//         "marker-color": "#1087bf",
+//         "marker-symbol": "marker-stroked"
+//       }
+//     }]
+//   }
+//
+// });
+//
+//
+// map.addLayer({
+//     "id": "juchru.mb43dc37",
+//     "layout": {
+//       "text-field": "{title}",
+//       "text-font": "Open Sans Semibold, Arial Unicode MS Bold",
+//       "text-offset": [0, 0.6],
+//       "text-anchor": "top"
+//     },
+//     "paint": {
+//       "text-size": 12
+//     }
+//   });
+//
+// });
+
+
 
 // //Enables a pop up but needs to be specified as to location
 // map.on('click', function(e) {
@@ -123,6 +351,10 @@ map.addLayer({
 // $('#map').on('click', '.trigger', function() {
 //     alert('Hello from Toronto!');
 // });
+
+
+//
+
 
 
 </script>
