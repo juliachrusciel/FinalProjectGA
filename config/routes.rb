@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "/profile" => "users#profile"
   post "/signup" => "users#suli"
   get "/login" => "users#suli"
+  
 
 
 
