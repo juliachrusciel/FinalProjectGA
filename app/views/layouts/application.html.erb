@@ -28,14 +28,18 @@
 <body>
 
   <!-- nav bar code begins -->
-  <!-- <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                <span class="glyphicon glyphicon-align-justify"></span>
-              </a>
-              <a class="navbar-brand" href="#">My App Title</a>
-            </div> -->
+  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <span class="glyphicon glyphicon-align-justify"></span>
+        </a>
+        <a class="navbar-brand" href="#">My App Title</a>
+      </div>
+    </div>
+  </nav>
+
+
             <!-- end navbar branding -->
             <!-- <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
@@ -46,13 +50,13 @@
               </ul>
             </div> -->
             <!-- end navbar links -->
-            <!-- <div class="dropdown">
+            <div class="dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
               <span class="caret"></span>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
                 <li role="presentation" class="dropdown-header">Dropdown header</li>
               </ul>
-            </div> -->
+            </div>
       <!-- nav bar ends -->
 
 
@@ -78,6 +82,23 @@ var map = new mapboxgl.Map({
   zoom: 11.35,
   minZoom: 11.35
 });
+
+
+
+
+
+// map.featuresAt([100, 100], {
+//     radius: 3,          // radius in pixels to search in
+// }, function(){})
+
+// map.on('click', function(evt){
+//   console.log(evt.point)
+//   debugger
+//   var m = evt.point.getLatLng();
+// });
+//
+
+
 //
 // var marker = mapboxgl.Marker(([40.9869, 29.036699]){
 //   icon: mapboxgl.marker.icon({
@@ -117,7 +138,10 @@ var map = new mapboxgl.Map({
 //     alert('Hello from Toronto!');
 // });
 
-
+//////////////////////////////////////////////////
+/////////////////////////////////////////////////
+///////////////////////////////////////////////
+///////////////////////////////////////////
 
 
 //
@@ -229,99 +253,112 @@ var map = new mapboxgl.Map({
 //
 // //////////Line For Kadikoy Tour
 // /////////////////////////////
-// map.on('style.load', function() {
-//   map.addSource("route", {
-//     "type": "geojson",
-//
-//     //line for Tour
-//     "data": {
-//       "type": "Feature",
-//       "properties": {},
-//       "geometry": {
-//         "type": "LineString",
-//         "coordinates": [
-//           [29.022939, 40.992815],
-//           [29.023507, 40.992548],
-//           [29.024033, 40.991811],
-//           [29.024183, 40.991511],
-//           [29.023958, 40.991034],
-//           [29.024741, 40.990669],
-//           [29.024333, 40.990135],
-//           [29.023894, 40.990191],
-//           [29.024248, 40.990005],
-//           [29.023958, 40.989657],
-//           [29.024505, 40.989479],
-//           [29.024076, 40.98913]
-//         ]
-//       }
-//     }
-//   });
-//
-//
-//   map.addLayer({
-//     "id": "route",
-//     "type": "line",
-//     "source": "route",
-//     "layout": {
-//       "line-join": "round",
-//       "line-cap": "round"
-//     },
-//     "paint": {
-//       "line-color": "#0000ff",
-//       "line-width": 2
-//     }
-//   });
-//
-//
-//
-// //////////Line For Kadikoy Market Area
-// /////////////////////////////
-//   map.addSource("market", {
-//     "type": "geojson",
-//
-//     //line for kadikoy market area
-//     "data": {
-//       "type": "Feature",
-//       "properties": {},
-//       "geometry": {
-//         "type": "LineString",
-//         "coordinates": [
-//           [29.022134, 40.989179],
-//           [29.023314, 40.990418],
-//           [29.023164, 40.990532],
-//           [29.0237, 40.99109],
-//           [29.023936, 40.991017],
-//           [29.024151, 40.991293],
-//           [29.026361, 40.990888],
-//           [29.026286, 40.989859],
-//           [29.025996, 40.98943],
-//           [29.025063, 40.989519],
-//           [29.024655, 40.988823],
-//           [29.025149, 40.987802],
-//           [29.024548,40.987786],
-//           [29.024055, 40.987883],
-//           [29.022115, 40.989185],
-//           [29.022129, 40.989179],
-//           [29.022139, 40.989185]
-//         ]
-//       }
-//     }
-//   });
-//
-//   map.addLayer({
-//     "id": "market",
-//     "type": "line",
-//     "source": "market",
-//     "layout": {
-//       "line-join": "round",
-//       "line-cap": "round"
-//     },
-//     "paint": {
-//       "line-color": "#ff0000",
-//       "line-width": 2
-//     }
-//   });
-// });
+map.on('style.load', function() {
+  map.addSource("route", {
+    "type": "geojson",
+
+    //line for Tour
+    "data": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [29.022939, 40.992815],
+          [29.023507, 40.992548],
+          [29.024033, 40.991811],
+          [29.024183, 40.991511],
+          [29.023958, 40.991034],
+          [29.024741, 40.990669],
+          [29.024333, 40.990135],
+          [29.023894, 40.990191],
+          [29.024248, 40.990005],
+          [29.023958, 40.989657],
+          [29.024505, 40.989479],
+          [29.024076, 40.98913]
+        ]
+      }
+    }
+  });
+
+
+  map.addLayer({
+    "id": "route",
+    "type": "line",
+    "source": "route",
+    "layout": {
+      "line-join": "round",
+      "line-cap": "round"
+    },
+    "paint": {
+      "line-color": "#0000ff",
+      "line-width": 2
+    }
+  });
+
+
+
+//////////Line For Kadikoy Market Area
+/////////////////////////////
+  map.addSource("market", {
+    "type": "geojson",
+
+    //line for kadikoy market area
+    "data": {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [29.022134, 40.989179],
+          [29.023314, 40.990418],
+          [29.023164, 40.990532],
+          [29.0237, 40.99109],
+          [29.023936, 40.991017],
+          [29.024151, 40.991293],
+          [29.026361, 40.990888],
+          [29.026286, 40.989859],
+          [29.025996, 40.98943],
+          [29.025063, 40.989519],
+          [29.024655, 40.988823],
+          [29.025149, 40.987802],
+          [29.024548,40.987786],
+          [29.024055, 40.987883],
+          [29.022115, 40.989185],
+          [29.022129, 40.989179],
+          [29.022139, 40.989185]
+        ]
+      }
+    }
+  });
+
+  map.addLayer({
+    "id": "market",
+    "type": "line",
+    "source": "market",
+    "layout": {
+      "line-join": "round",
+      "line-cap": "round"
+    },
+    "paint": {
+      "line-color": "#ff0000",
+      "line-width": 2
+    }
+  });
+});
+
+map.on('click', function(e) {
+  var latLng = map.unproject(e.point);
+  var lat = latLng.lat;
+  var lng = latLng.lng;
+  console.log(latLng);
+  if (  lat>41 && lat<41.5 ) {
+   var tooltip = new mapboxgl.Popup()
+      .setLatLng(map.unproject(e.point))
+      .setHTML('<h1>Hello World!</h1>')
+      .addTo(map);
+  }
+});
 
 
 

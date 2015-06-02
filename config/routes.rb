@@ -16,18 +16,21 @@ Rails.application.routes.draw do
   #Users routes
   #get "users/:id" =>
 
-  #users toutes
+  #users routes
+  get "/profile" => "users#profile"
+  post "/signup" => "users#suli"
+  get "/login" => "users#suli"
 
 
 
-  #Hisar_ustu_bebeks routes
-  get "/hisarustubebek" => "hisar_ustu_bebeks#index"
-
-  #Kadikoys routes
-  get "/kadikoy" => "kadikoys#index"
-
-  #Taksims routes
-  get "/taksim" => "taksims#index"
+  # #Hisar_ustu_bebeks routes
+  # get "/hisarustubebek" => "hisar_ustu_bebeks#index"
+  #
+  # #Kadikoys routes
+  # get "/kadikoy" => "kadikoys#index"
+  #
+  # #Taksims routes
+  # get "/taksim" => "taksims#index"
 
   #Vocabs routes
 
