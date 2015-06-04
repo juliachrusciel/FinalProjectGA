@@ -12,17 +12,43 @@ Rails.application.routes.draw do
 
   #Admin routes
   get "/admin" => "admin#home"
+  #kadikoy routes with admin
+  get "/kadikoys/:id/edit" => "admin#home"
+  patch "/kadikoys/:id" => "admin#update"
+  put "/kadikoys/:id" => "admin#update"
+  #Hisar_ustu_bebeks routes with admin
+  get "/hisar_ustu_bebeks/:id/edit" => "admin#home"
+  patch "/hisar_ustu_bebeks/:id" => "admin#update"
+  put "/hisar_ustu_bebeks/:id" => "admin#update"
+  #taksims routes with admin
+  get "/taksims/:id/edit" => "admin#home"
+  patch "/taksims/:id" => "admin#update"
+  put "/taksims/:id" => "admin#update"
+
+  ###########################################
+
   #post " " => ""
   #Users routes
   #get "users/:id" =>
 
   #users routes
   get "/profile" => "users#profile"
+  post "/profile" => "users#update_prof"
+  get "/users/:id" => "users#profile"
 
-  post "/signup" => "users#suli"
-  post "/login" => "users#suli"
+  post "/login" => "users#user_login"
+  post "/signup" => "users#user_signup"
 
-  get "/login" => "users#suli"
+  get "/login" => "users#user_login"
+  get "/signup" => "users#user_signup"
+  #Is this correct for logout?
+
+  #sessions routes
+  post "sessions" => "sessions#create"
+  post "sessions" => "users#create"
+  post "sessions" => "sessions#destroy"
+  delete "/logout" => "sessions#destroy"
+
 
   #Vocabs routes
   get "/vocab" => "vocabs#vocab_main"

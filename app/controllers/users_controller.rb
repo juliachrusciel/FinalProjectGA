@@ -30,6 +30,35 @@ class UsersController < ApplicationController
     redirect_to '/admin'
   end
 
+  def log_user_in
+    # @user = current_user
+    puts params
+    @loginuser = User.find(params[:username])
+
+    username = params[:username].to_s
+    password = params[:password].to_s
+    @user.username = username
+    @user.password = password
+    redirect_to "/profile"
+  end
+
+  def user_signup
+    username = params[:username].to_s
+    password = params[:password].to_s
+    email = params[:email].to_s
+    User.new(params)
+    redirect_to "/login"
+  end
+
+  # def user_login
+  #
+  # end
+  #
+  # def user_signup
+  #
+  # end
+
+
   def profile
     authenticate!
     @user = current_user

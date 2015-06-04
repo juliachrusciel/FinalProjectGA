@@ -28,6 +28,7 @@
         .darkerblue { background: rgb(0,0,102) !important; }
         .darkbluetext { color: aliceblue !important; }
     </style>
+
 </head>
 <body>
   <nav class="navbar navbar-default navbar-static-top navbar-inverse darkerblue">
@@ -66,11 +67,11 @@
                 <li><a href="#">Vocab</a></li>
                 <li><a href="#">Log Out</a></li>
               </ul> -->
-              <li><a class="darkbluetext" href="../login">Log In</a></li>
-              <li><a class="darkbluetext" href="../signup">Sign Up</a></li>
+              <li><a class="darkbluetext" href="/login">Log In</a></li>
+              <li><a class="darkbluetext" href="/signup">Sign Up</a></li>
 
               <li><a class="darkbluetext" href="../vocab">Vocab</a></li>
-              <li><a class="darkbluetext" href="../logout">Log Out</a></li>
+              <li><a class="darkbluetext" href="/logout">Log Out</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -523,5 +524,7 @@ map.on('click', function(e) {
 
 </script>
 
+
+<%= yield %>
 </body>
 </html>
