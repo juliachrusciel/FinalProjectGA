@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 
   private
   def users_params
-    params.require(:user).permit(:TurkishWP, :EnglishWP, :part_of_speech, :formal, :slang )
+    params.require(:vocab).permit( :username, :password, :email, :first_name, :surname, :nationality, :first_language, :second_language, :third_language, :fourth_language)
   end
   ###sessions, creating users, passwords
   ###rails g session controller

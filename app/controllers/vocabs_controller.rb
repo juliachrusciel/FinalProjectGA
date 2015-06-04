@@ -1,12 +1,15 @@
 class VocabsController < ApplicationController
 
   def vocab
-    @vocab = new_vocab
+    @vocabs = Vocab.all
+  end
 
+  def new
+    @vocab = Vocab.new
   end
 
   def create
-    @vocab = Vocab.create(vocab_params)
+    @vocab = Vocab.create!(vocab_params)
     redirect_to "/"
   end
 
@@ -22,7 +25,7 @@ class VocabsController < ApplicationController
   end
 
   def vocab_params
-    params.require(:vocab).permit( :TurkishWP, :EnglishWP, :part_of_speech, :formal, :slang)
+    params.require(:user).permit(:TurkishWP, :EnglishWP, :part_of_speech, :formal, :slang )
   end
 
 end
