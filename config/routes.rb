@@ -24,6 +24,9 @@ Rails.application.routes.draw do
 
   get "/login" => "users#suli"
 
+  #Vocabs routes
+  get "/vocab" => "vocabs#vocab_main"
+  get "vocab/:id" => "vocabs#search"
 
 
 
@@ -36,7 +39,6 @@ Rails.application.routes.draw do
   # #Taksims routes
   # get "/taksim" => "taksims#index"
 
-  #Vocabs routes
 
 
 
