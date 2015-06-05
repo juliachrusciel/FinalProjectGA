@@ -18,16 +18,9 @@
     <!-- End of bootstrap head -->
 
     <!-- <link href="style.css" rel=stylesheet> -->
-
-    <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
-        ul { list-style-type: none; margin: 0; padding: 0; }
-        .dropdown { position: relative; }
-        .dropdown-menu { right: auto }
-        .darkerblue { background: rgb(0,0,102) !important; }
-        .darkbluetext { color: aliceblue !important; }
-    </style>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 
 </head>
 

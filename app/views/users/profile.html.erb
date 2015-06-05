@@ -2,7 +2,26 @@
     <h1>Merhaba, <%= @name %>!</h1>
     <p id="tag_line_1"> Update your username, email or password.</p>
 
-    <div id="profile-update-form">
+    <form action="/profile" method="post">
+      <div>
+         <label for="username">Username:</label>
+         <input type="text" id="username" />
+     </div>
+     <div>
+       <label for="password">Password:</label>
+       <input type="text" id="password" />
+     </div>
+     <div>
+       <label for="mail">Email:</label>
+       <input type="text" id="mail" />
+     </div>
+     <div class="button">
+       <button type="submit">Update</button>
+     </div>
+    </form>
+
+
+    <!-- <div id="profile-update-form">
       <%= form_for @user do |f| %>
       <%= f.label :username %>
       <%= f.text_field :username%>
@@ -12,7 +31,7 @@
       <%= f.password_field :password%>
       <%= f.submit  'Update', id: 'edit-button' %>
       <% end %>
-    </div>
+    </div> -->
 
 
     <p id="tag_line_2">"To change your username, email or password, please reenter your information and change"</p>

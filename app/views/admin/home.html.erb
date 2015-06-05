@@ -1,0 +1,47 @@
+<body id="admin-page">
+  <h1>Neighborhoods Terminal</h1>
+  <body id="edit-vocab-form">
+    <h1>Merhaba, <%= @name %>!</h1>
+    <p id="edit-vocab-form-desc">Edit or add a vocab item in English and Turkish, with appropriate accompanying information.</p>
+
+      <form action="/profile" method="post">
+        <div>
+           <label for="username">Username:</label>
+           <input type="text" id="username" />
+       </div>
+       <div>
+         <label for="password">Password:</label>
+         <input type="text" id="password" />
+       </div>
+       <div>
+         <label for="mail">Email:</label>
+         <input type="text" id="mail" />
+       </div>
+       <div class="button">
+         <button type="submit">Update</button>
+       </div>
+      </form>
+
+    <p id="tag_line_1"> Update your username, email or password.</p>
+
+    <form action="/profile" method="post">
+      <div>
+         <label for="username">Username:</label>
+         <input type="text" id="username" />
+     </div>
+     <div>
+       <label for="password">Password:</label>
+       <input type="text" id="password" />
+     </div>
+     <div>
+       <label for="mail">Email:</label>
+       <input type="text" id="mail" />
+     </div>
+     <div class="button">
+       <button type="submit">Update</button>
+     </div>
+    </form>
+
+
+
+</body>
