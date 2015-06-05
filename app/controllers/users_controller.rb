@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     redirect_to '/admin'
   end
 
+
   def log_user_in
     # @user = current_user
     puts params
@@ -63,7 +64,7 @@ class UsersController < ApplicationController
     authenticate!
     @user = current_user
     @newuser = User.new
-    @edituser = User.edit
+    # @edituser = User.find
   end
 
   def update_profile
