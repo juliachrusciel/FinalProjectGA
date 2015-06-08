@@ -27,8 +27,7 @@ Rails.application.routes.draw do
 
   ###########################################
 
-  #Sign Up Log in Save, Retrieve and Edit Routes
-  #initially save user to database
+  #Sign Up, Log in, and log out routes
   #Sign Up - in Users
   post "/signup" => "users#user_signup_post"
   get "/signup" => "users#signup"
@@ -39,6 +38,8 @@ Rails.application.routes.draw do
 
   #Logout
   delete "/logout" => "sessions#destroy"
+  get "/logout" => "sessions#destroy"
+
 
 
 #######################################

@@ -49,20 +49,10 @@ class UsersController < ApplicationController
     username = params[:username].to_s
     password = params[:password].to_s
     email = params[:email].to_s
-    User.new(user_params)
-    User.save
+    @user = User.new(user_params)
+    @user.save
     redirect_to "/login"
   end
-
-  # def user_login
-  #
-  # end
-  #
-  # def user_signup
-  #
-  # end
-
-
 
   def profile
     authenticate!
