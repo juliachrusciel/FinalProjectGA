@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate!
-    redirect_to "/" unless current_user
+    redirect_to "/error" unless current_user
   end
 
   # def admin_authenticate!

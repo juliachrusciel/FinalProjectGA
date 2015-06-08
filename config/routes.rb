@@ -27,27 +27,36 @@ Rails.application.routes.draw do
 
   ###########################################
 
-  #post " " => ""
-  #Users routes
-  #get "users/:id" =>
+  #Sign Up Log in Save, Retrieve and Edit Routes
+  #initially save user to database
+  #Sign Up - in Users
+  post "/signup" => "users#user_signup_post"
+  get "/signup" => "users#signup"
 
+  #Login
+  post "/login" => "sessions#create"
+  get "/login" => "users#login"
+
+  #Logout
+  delete "/logout" => "sessions#destroy"
+
+
+#######################################
+######################################
+  get "/demo/signup" => "users#demo"
   #users routes
   get "/profile" => "users#profile"
   post "/profile" => "users#update_prof"
   get "/users/:id" => "users#profile"
 
-  post "/login" => "users#user_login"
-  post "/signup" => "users#user_signup"
 
-  get "/login" => "users#user_login"
-  get "/signup" => "users#user_signup"
-  #Is this correct for logout?
+
+  get "/error" => "users#error"
 
   #sessions routes
   post "sessions" => "sessions#create"
   post "sessions" => "users#create"
   post "sessions" => "sessions#destroy"
-  delete "/logout" => "sessions#destroy"
 
 
   #Vocabs routes

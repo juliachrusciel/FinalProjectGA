@@ -1,0 +1,22 @@
+  <head>
+  </head>
+  <body id="login_page">
+
+    <h1>Log In</h1>
+
+    <form action="/login" method="post">
+      <%= token_tag %>
+      <div>
+         <label for="username">Username:</label>
+         <input type="text" id="username" />
+     </div>
+     <div>
+       <label for="password">Password:</label>
+       <input type="text" id="password" />
+     </div>
+     <div class="button">
+       <button type="submit">Log In</button>
+     </div>
+    </form>
+
+  </body>

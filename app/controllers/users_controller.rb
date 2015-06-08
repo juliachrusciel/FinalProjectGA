@@ -30,24 +30,27 @@ class UsersController < ApplicationController
     redirect_to '/admin'
   end
 
+  # def log_user_in
+  #   # @user = current_user
+  #   puts params
+  #   @loginuser = User.find(params[:username])
+  #
+  #   username = params[:username].to_s
+  #   password = params[:password].to_s
+  #   @user.username = username
+  #   @user.password = password
+  #   redirect_to "/profile"
+  # end
 
-  def log_user_in
-    # @user = current_user
-    puts params
-    @loginuser = User.find(params[:username])
-
-    username = params[:username].to_s
-    password = params[:password].to_s
-    @user.username = username
-    @user.password = password
-    redirect_to "/profile"
+  def signup
   end
 
-  def user_signup
+  def user_signup_post
     username = params[:username].to_s
     password = params[:password].to_s
     email = params[:email].to_s
-    User.new(params)
+    User.new(user_params)
+    User.save
     redirect_to "/login"
   end
 
@@ -60,11 +63,12 @@ class UsersController < ApplicationController
   # end
 
 
+
   def profile
     authenticate!
     @user = current_user
     @newuser = User.new
-    # @edituser = User.find
+    @edituser = User.find
   end
 
   def update_profile
@@ -81,10 +85,7 @@ class UsersController < ApplicationController
   end
 
   private
-  def users_params
-    params.require(:vocab).permit( :username, :password, :email, :first_name, :surname, :nationality, :first_language, :second_language, :third_language, :fourth_language)
+  def user_params
+    params.require(:user).permit(:username, :password, :email, :first_name, :surname, :nationality, :first_language, :second_language, :third_language, :fourth_language)
   end
-  ###sessions, creating users, passwords
-  ###rails g session controller
-
 end
