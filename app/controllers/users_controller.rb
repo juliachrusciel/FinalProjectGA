@@ -1,13 +1,23 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    @user = current_user
   end
 
   def new
     @user = User.new
     @user = current_user
   end
+
+  def home
+      @user = current_user
+  end
+
+  # def which_nav_to_render
+  #   if current_user
+  #   return <%= render :partial => "signed_in_nav" %>
+  # else  return  <%= render :partial => "nav" %>
+  # end
 
   def create
     user = User.create!(user_params)

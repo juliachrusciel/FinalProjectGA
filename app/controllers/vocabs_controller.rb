@@ -6,7 +6,6 @@ class VocabsController < ApplicationController
 
   def vocab_main
     @vocabs = Vocab.all
-    
   end
 
   def new
