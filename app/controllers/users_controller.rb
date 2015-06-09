@@ -67,8 +67,6 @@ class UsersController < ApplicationController
   def profile
     authenticate!
     @user = current_user
-    @newuser = User.new
-    @edituser = User.find
   end
 
   def update_profile
