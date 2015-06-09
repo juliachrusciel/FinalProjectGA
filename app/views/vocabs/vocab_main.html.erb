@@ -7,12 +7,17 @@
       <div class="col-md-6">Turkish Vocab/Phrase</div>
       <div class="col-md-6">English Vocab/Phrase</div>
     </div>
-    <%= # loop through all the vocabs ++++ vocab.push.TurkishWP %>
-      <div class="row">
-        <div class="col-md-6"><%= word.TurkishWP %></div>
-        <div class="col-md-6"><%= word.EnglishWP %></div>
-      </div>
+
+    <%= @vocabs.each do |word| %>
+      <h1> <%= word %> </h1>
+
+      <h2> <%= word[:part_of_speech] %> </h2>
+      <h2> <%= word[:TurkishWP] %> </h2>
+      <h2> <%= word[:EnglishWP] %> </h2>
+
     <% end %>
+
+
 
   </table>
 </body>

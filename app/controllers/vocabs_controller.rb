@@ -4,6 +4,11 @@ class VocabsController < ApplicationController
     @vocabs = Vocab.all
   end
 
+  def vocab_main
+    @vocabs = Vocab.all
+    
+  end
+
   def new
     @vocab = Vocab.new
   end
