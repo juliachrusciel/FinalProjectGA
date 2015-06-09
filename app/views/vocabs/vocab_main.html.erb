@@ -1,8 +1,33 @@
 <head>
 </head>
 
-<body id="vocab_table">
-  <table class="table table-condensed table-responsive">
+<h3>Vocab List // Kelime Hazinesi Listesi</h3>
+
+
+<!-- <body>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <div class="col-md-5"><th> Turkish Vocab/Phrase </th> </div>
+          <div class="col-md-5"><th> English Vocab/Phrase </th> </div>
+          <div class="col-md-2"><th> Part of Speech </th> </div>
+        </tr>
+
+        <tr>
+        <th> <% @vocabs.each do |word| %> </th>
+        <div class="col-md-5"> <th> <%= word[:TurkishWP] %> </th> </div>
+        <div class="col-md-5"> <th><%= word[:EnglishWP] %> </th> </div>
+        <div class="col-md-2"> <th><%= word[:part_of_speech] %> </th> </div>
+        <th> <% end %> </th>
+        </tr>
+    </thead>
+  </table>
+</body> -->
+
+
+
+<body>
     <div class="row">
       <div class="col-md-5"> <h5>Turkish Vocab/Phrase</h5> </div>
       <div class="col-md-5"> <h5>English Vocab/Phrase</h5> </div>
@@ -10,15 +35,10 @@
     </div>
 
     <div class="row">
-      <!-- <%= @vocabs.each do |word| %> -->
-      <div class="col-md-5"> <h10> <%= word[:TurkishWP] %> </h10> </div>
-      <div class="col-md-5"> <h10> <%= word[:EnglishWP] %> </h10> </div>
-      <div class="col-md-2"> <h10> <%= word[:part_of_speech] %> </h10> </div>
+      <% @vocabs.each do |word| %>
+      <div class="col-md-5"> <h6> <%= word[:TurkishWP] %> </h6> </div>
+      <div class="col-md-5"> <h6> <%= word[:EnglishWP] %> </h6> </div>
+      <div class="col-md-2"> <h6> <%= word[:part_of_speech] %> </h6> </div>
       <% end %>
     </div>
-
-
-
-
-  </table>
 </body>
