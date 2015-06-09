@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
   validates_presence_of :password
   validates :password, length: {in: 6..20}
 
-  validates :email, confirmation: true
   validates :email, uniqueness: { case_sensitive: false }
 
 end

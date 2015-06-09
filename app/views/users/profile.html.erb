@@ -1,10 +1,9 @@
   <body id="profile-page">
-    <%= render :partial => "nav" %>
 
-    <h1>Merhaba, <%= @name %>!</h1>
+    <h1>Merhaba, <%= @user.username %>!</h1>
     <p id="tag_line_1"> Update your username, email or password.</p>
 
-    <form action="/profile" method="post">
+    <form action="/profile" method="patch">
       <div>
          <label for="username">Username:</label>
          <input type="text" id="username" />
@@ -22,10 +21,13 @@
      </div>
     </form>
 
+    <p id="tag_line_2">To change your username, email or password, please reenter your information in every category, including those items which you will not change.</p>
+
+    <h3>Saved Itineraries</h3>
+        
+    <h3>Submitted Reviews</h3>
 
 
-    <p id="tag_line_2">"To change your username, email or password, please reenter your information and change"</p>
-    <footer></footer>
 
       <!-- <script type="text/javascript">
 
