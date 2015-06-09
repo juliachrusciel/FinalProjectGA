@@ -4,18 +4,19 @@
 <body id="vocab_table">
   <table class="table table-condensed table-responsive">
     <div class="row">
-      <div class="col-md-6">Turkish Vocab/Phrase</div>
-      <div class="col-md-6">English Vocab/Phrase</div>
+      <div class="col-md-5"> <h5>Turkish Vocab/Phrase</h5> </div>
+      <div class="col-md-5"> <h5>English Vocab/Phrase</h5> </div>
+      <div class="col-md-2"> <h5>Part of Speech</h5> </div>
     </div>
 
-    <%= @vocabs.each do |word| %>
-      <h1> <%= word %> </h1>
+    <div class="row">
+      <!-- <%= @vocabs.each do |word| %> -->
+      <div class="col-md-5"> <h10> <%= word[:TurkishWP] %> </h10> </div>
+      <div class="col-md-5"> <h10> <%= word[:EnglishWP] %> </h10> </div>
+      <div class="col-md-2"> <h10> <%= word[:part_of_speech] %> </h10> </div>
+      <% end %>
+    </div>
 
-      <h2> <%= word[:part_of_speech] %> </h2>
-      <h2> <%= word[:TurkishWP] %> </h2>
-      <h2> <%= word[:EnglishWP] %> </h2>
-
-    <% end %>
 
 
 
