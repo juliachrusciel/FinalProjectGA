@@ -60,9 +60,9 @@ Rails.application.routes.draw do
   post "sessions" => "sessions#destroy"
 
 
-  #Vocabs routes
+  # #Vocabs routes
   get "/vocab" => "vocabs#vocab_main"
-  get "vocab/:id" => "vocabs#search"
+  # get "vocab/:id" => "vocabs#search"
 
 
 
@@ -74,11 +74,6 @@ Rails.application.routes.draw do
   #
   # #Taksims routes
   # get "/taksim" => "taksims#index"
-
-
-
-
-
 
 
   # Example of regular route:

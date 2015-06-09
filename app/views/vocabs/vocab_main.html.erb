@@ -1,0 +1,18 @@
+<head>
+</head>
+
+<body id="vocab_table">
+  <table class="table table-condensed table-responsive">
+    <div class="row">
+      <div class="col-md-6">Turkish Vocab/Phrase</div>
+      <div class="col-md-6">English Vocab/Phrase</div>
+    </div>
+    <%= # loop through all the vocabs ++++ vocab.push.TurkishWP %>
+      <div class="row">
+        <div class="col-md-6"><%= word.TurkishWP %></div>
+        <div class="col-md-6"><%= word.EnglishWP %></div>
+      </div>
+    <% end %>
+
+  </table>
+</body>
