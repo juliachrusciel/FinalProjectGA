@@ -27,7 +27,14 @@
 <body>
   <%= render :partial => "nav" %>
 
-  <h3>Vocab List // Kelime Hazinesi Listesi</h3>
+  <h3>Vocab List</h3>
+  <!-- <h3>Kelime Hazinesi Listesi</h3> -->
+
+    <form class="vocab_search_field">
+      <input type="text" placeholder="learn a new word..." required>
+      <input type="button" value="Search">
+    </form>
+
     <div class="row">
       <div class="col-md-5"> <h5>Turkish Vocab/Phrase</h5> </div>
       <div class="col-md-5"> <h5>English Vocab/Phrase</h5> </div>
