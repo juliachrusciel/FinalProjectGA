@@ -30,7 +30,7 @@ class HisarUstuBebeksController < ApplicationController
 
   private
   def hisar_ustu_bebek_params
-    params.require(:hisar_ustu_bebek).permit(:latitude, :longitude,:place_name, :address, :phone_number, :email, :place_type, :description :keyword, :question, :review, :origin_date)
+    params.require(:hisar_ustu_bebek).permit(:latitude, :longitude, :place_name, :address, :phone_number, :email, :place_type, :description, :keyword, :question, :review, :origin_date)
   end
 
 end
