@@ -17,9 +17,9 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 
 ## Part that enables public key hiding
-Dotenv::Railtie.load
-
-HOSTNAME = ENV['HOSTNAME']
+# Dotenv::Railtie.load
+#
+# HOSTNAME = ENV['HOSTNAME']
 ## End of that part
 
 
