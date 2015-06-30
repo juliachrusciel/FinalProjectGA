@@ -3,6 +3,8 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-require "dotenv-heroku/tasks"
+# require "dotenv-heroku/tasks"
+# require 'rails/all'
+# require 'dotenv' ; Dotenv.load ".env.local", ".env.#{Rails.env}"
 
 Rails.application.load_tasks

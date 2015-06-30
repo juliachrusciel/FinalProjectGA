@@ -35,12 +35,13 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 
-gem 'dotenv-heroku'
+# gem 'dotenv-heroku'
+# gem 'dotenv', github: 'ecbypi/dotenv', branch: 'overload-environment-variables'
 
 
 group :development, :test do
   # #For hiding API keys
-  gem 'dotenv-rails'
+  # gem 'dotenv-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
