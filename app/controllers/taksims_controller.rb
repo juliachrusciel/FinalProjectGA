@@ -30,7 +30,7 @@ class TaksimsController < ApplicationController
 
   private
   def taksim_params
-    params.require(:taksim).permit(:latitude, :longitude,:place_name, :address, :phone_number, :email, :place_type, :description :keyword, :question, :review, :origin_date)
+    params.require(:taksim).permit(:latitude, :longitude, :place_name, :address, :phone_number, :email, :place_type, :description, :keyword, :question, :review, :origin_date)
   end
 
 end
